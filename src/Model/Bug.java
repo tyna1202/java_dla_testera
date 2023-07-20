@@ -1,12 +1,14 @@
+package Model;
+
 public class Bug {
 
-    String opisBledu;
-    String email;
-    int priorityPoint;
-    boolean statusBledu;
+    private String opisBledu;
+    private String email;
+    private int priorityPoint;
+    private boolean statusBledu;
 
 
-    Bug(String opisBledu, String email, int priorityPoint) {
+    public Bug(String opisBledu, String email, int priorityPoint) {
 
         this.opisBledu = opisBledu;
         this.email = email;
@@ -16,19 +18,19 @@ public class Bug {
     }
 
 
-    void getAllInfo() {
+    public void getAllInfo() {
         System.out.println(opisBledu + " " + email + " " + priorityPoint + " " + statusBledu);
     }
 
-    void getEmail() {
+    public void getEmail() {
         System.out.println("Email: " + email);
     }
 
-    int getPoint() {
+    public int getPoint() {
         return priorityPoint;
     }
 
-    void showStatus() {
+    public void showStatus() {
         System.out.println("status błędu: " + statusBledu );
     }
     }
