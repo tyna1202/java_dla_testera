@@ -4,11 +4,11 @@ public class User {
     // 1. POLA OBIEKTU
     // OPISUJĄ Z CZEGO SIĘ BĘDZIE SKŁADAŁ DANY OBIEKT
 
-    String firstName;
-    String lastName;
-    String email;
-    int age;
-    boolean isAdult;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private int age;
+    private boolean isAdult;
 
 
     // 3.KONSTRUKTOR
@@ -19,7 +19,7 @@ public class User {
     // KONSTRUKTOR NIE MA ZWARACANEGO TYPU (TO GO ODRÓŻNIA OD METODY)
 
 
-    User(String firstName, String lastName, String email, int age) {
+    public User(String firstName, String lastName, String email, int age) {
 
 
         this.firstName = firstName;
@@ -38,22 +38,33 @@ public class User {
     // zwracany typ + nazwa metody
     //metoda VOID nic nie zwraca - wyświetla jedynie informację na konsolę
 
-    void getFullName() {
+    public void getFullName() {
         System.out.println(firstName + " " + lastName);
     }
 
-    void getAllInfo() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+       if (email.endsWith(".ru")) {
+           System.out.println("RU emails are not allowed");
+       } else {
+           this.email = email;
+       }
+    }
+    public void getAllInfo() {
         System.out.println(firstName + " " + lastName + " " + email + " " + age + " " + isAdult);
     }
 
 
     // metody zwracające - wartość nie jest widoczna, wymagana jest dodatkowa funkcja wyświelenia na konolę
 
-   int getUserAge() {
+   public int getUserAge() {
         return age;
    }
 
-   boolean isUserAdult(){
+   public boolean isUserAdult(){
         if (age >= 18) {
             return true;
         } else {
@@ -61,20 +72,20 @@ public class User {
         }
    }
 
-   void greetings(String name){
+   public void greetings(String name){
        System.out.println("Hello " + name + ". Nice to meet you!");
    }
 
-    void greetings(String firstName, String lastName){
+    public void greetings(String firstName, String lastName){
         System.out.println("Hello " + firstName + " " + lastName + ". Nice to meet you!");
     }
 
-   void howOldAreYou(String name, int userAge) {
+   public void howOldAreYou(String name, int userAge) {
        System.out.println("Hello " + name + ". Your are " + userAge + " years old.");
 
    }
 
-   int yourAgePlus10(int userAge){
+   public int yourAgePlus10(int userAge){
         return userAge + 10;
    }
 
