@@ -1,6 +1,8 @@
 public class User {
 
 
+    private static int userCounter = 0; // pola statyczne należą do klasy a nie należą do obiektu
+
     // 1. POLA OBIEKTU
     // OPISUJĄ Z CZEGO SIĘ BĘDZIE SKŁADAŁ DANY OBIEKT
 
@@ -27,6 +29,7 @@ public class User {
         this.age = age;
         this.email = email;
         this.isAdult = isUserAdult();
+        userCounter++;
 
     }
 
@@ -89,7 +92,9 @@ public class User {
         return userAge + 10;
    }
 
-
+    public static int getUserCounter(){
+        return userCounter;
+    }
 
 
 }

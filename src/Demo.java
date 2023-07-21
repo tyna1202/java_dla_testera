@@ -101,13 +101,78 @@ public class Demo {
 //        System.out.println(strip.length());
 
 
-        User user = new User("Marcin", "Tomb", "marcin@redhat.com", 17);
+//        User user = new User("Marcin", "Tomb", "marcin@redhat.com", 17);
+//
+//        System.out.println(user.getEmail());
+//
+//        user.setEmail("marcin@mail.pl");
+//
+//        System.out.println(user.getEmail());
 
-        System.out.println(user.getEmail());
 
-        user.setEmail("marcin@mail.pl");
+        // TABLICE
+        // 1. Zbiór danych tego samego typu
+        // 2. Zawsze musimy określić jej rozmiar
+        // 3. Ostatni element to długość tablicy -1
+        // 4. [] - tablica
+        // 5. int[] numbers = new int[]
 
-        System.out.println(user.getEmail());
+//        String[] names = new String[5];
+
+        // wartości tablicy: ["Marian", "Jola", "Katarzyna", "Kacper", "Darek"]
+        // indexy wartości:  [    0,       1,        2,          3,       4   ]
+
+//        names[0] = "Marian";
+//        names[1] = "Jola";
+//        names[2] = "Katarzyna";
+//        names[3] = "Kacper";
+//        names[4] = "Darek";
+//
+//        // for(licznik; warunek; zmiana_licznika)
+//
+//     for(int i = 0; i < names.length; i++) {
+//         if(i % 2 == 0) {                       //wyświetlanie tylko parzystych indexów
+//             System.out.println(names[i]);
+//         }
+//     }
+
+
+     // PĘTLA FOR EACH
+
+//        for (String name: names) {
+//            System.out.println(name);
+//        }
+
+
+        // PĘTLA WHILE
+
+//        int i = 10;
+//
+//        while (i < 20) {
+//            System.out.println(i);
+//            i++;
+//        }
+
+        // PĘTLA DO WHILE
+
+//        int i = 10;
+//
+//        do{
+//            System.out.println("ta liczba jest w pętli do: ");
+//            System.out.println(i);
+//            i++;
+//        } while (i < 20);
+
+
+        // USER COUNTER
+
+        User u1 = new User ("Jacek", "Borowik", "jacek@gmail.com", 56);
+        User u2 = new User ("Jacek", "Borowik", "jacek@gmail.com", 56);
+        User u3 = new User ("Jacek", "Borowik", "jacek@gmail.com", 56);
+        User u4 = new User ("Jacek", "Borowik", "jacek@gmail.com", 56);
+        User u5 = new User ("Jacek", "Borowik", "jacek@gmail.com", 56);
+
+        System.out.println(User.getUserCounter());
 
     }
 }
