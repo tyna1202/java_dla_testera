@@ -1,17 +1,18 @@
 package Model;
 
-public class Bug {
+public class Bug implements ConsoleNotification {
 
     private String bugDescription;
-    private String email;
     private int bugPriority;
     private boolean bugStatus;
 
-    public Bug(String bugDescription, String email, int bugPriority) {
+    private BugReporter bugReporter;
+
+    public Bug(String bugDescription, BugReporter bugReporter, int bugPriority) {
         this.bugDescription = bugDescription;
-        this.email = email;
         this.bugPriority = bugPriority;
         this.bugStatus = false;
+        this.bugReporter = bugReporter;
     }
 
     public String getBugDescription() {
@@ -22,24 +23,60 @@ public class Bug {
         this.bugDescription = bugDescription;
     }
 
-    public String getEmail() {
-        return email;
+
+
+    @Override
+    public void notifyStatusChange() {
+        System.out.println("Bug status has changed");
     }
 
-    public void setEmail(String email) {
-        if(!email.contains("@")){
-            System.out.println("Incorrect email format");
-        } else {
-            this.email = email;
-        }
-
-    }
 
     public int getBugPriority() {
         return bugPriority;
     }
 
     public void setBugPriority(int bugPriority) {
-        this.bugPriority = bugPriority;
+        switch (bugPriority) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                this.bugPriority = bugPriority;
+                break;
+            default: {
+                System.out.println("Incorrect bug priorityity range");
+            }
+        }
+    }
+
+    public BugReporter getBugReporter() {
+        return bugReporter;
+    }
+
+    public void setBugReporter(BugReporter bugReporter) {
+        this.bugReporter = bugReporter;
+    }
+
+    public boolean isBugStatus() {
+        return bugStatus;
+    }
+
+    public void setBugStatus(boolean bugStatus) {
+    notifyStatusChange();
+        this.bugStatus = bugStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "Bug{" +
+                "bugDescription='" + bugDescription + '\'' +
+                ", bugPriority=" + bugPriority +
+                ", bugStatus=" + bugStatus +
+                ", bugReporter=" + bugReporter +
+                '}';
     }
 }
+
+
+

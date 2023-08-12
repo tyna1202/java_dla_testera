@@ -1,20 +1,17 @@
+import Model.Bug;
+import Model.BugReporter;
 import Model.User;
 import Model.computer.*;
 
 public class Main {
-    public static void main(String[] args) {
 
-       Hdd hdd = new Hdd("Samsung", 500);
-       Ram ram = new Ram("AAA", 128);
+    public static void main(String[] args){
 
-       Computer mac = new Laptop("Mac", "Pro", hdd, ram, 100);
-        System.out.println(mac.getRam().getSize());
+    BugReporter bugReporter = new BugReporter("b@test.com", "Bartek", "Test");
+    Bug bug = new Bug("Internet conecction is not working", bugReporter, 5);
 
-
-
-
-
-
+        System.out.println(bug);
+        bug.setBugStatus(true);
 
 
 
